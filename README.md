@@ -17,7 +17,7 @@ graph TD
 ## Main Architecture
 
 ```mermaid
-graph LR
+graph TD
     subgraph Servicios
         B[TracksService]
         C[TextService]
