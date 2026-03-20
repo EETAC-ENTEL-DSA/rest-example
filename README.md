@@ -27,6 +27,8 @@ graph TD
         I[TracksManager]
         D[TracksManagerImpl]
         E[Track]
+        Dummy1[ ]
+        Dummy2[ ]
     end
     A[HTTP Client] --> B
     A --> C
