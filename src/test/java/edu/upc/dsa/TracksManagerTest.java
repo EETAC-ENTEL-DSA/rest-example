@@ -1,7 +1,9 @@
 package edu.upc.dsa;
 
+import edu.upc.dsa.domain.repository.TracksManager;
+import edu.upc.dsa.domain.repository.TracksManagerImpl;
 import edu.upc.dsa.exceptions.TrackNotFoundException;
-import edu.upc.dsa.models.Track;
+import edu.upc.dsa.domain.models.Track;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

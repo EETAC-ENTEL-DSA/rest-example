@@ -1,4 +1,4 @@
-package edu.upc.dsa.models;
+package edu.upc.dsa.domain.models;
 
 import edu.upc.dsa.util.RandomUtils;
 
