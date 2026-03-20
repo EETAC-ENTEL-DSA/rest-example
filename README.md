@@ -22,7 +22,7 @@ graph TD
         B[TracksService]
         C[TextService]
     end
-    subgraph Business logic
+    subgraph Domain
         B
         I[TracksManager]
         D[TracksManagerImpl]
