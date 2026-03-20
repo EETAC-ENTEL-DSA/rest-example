@@ -29,6 +29,7 @@ graph TD
 ```
 
 ### Main Components:
+- **Main**: Main class that serves as the entry point. Internally, it configures a ResourceConfig to scan for JAX-RS resources in the "edu.upc.dsa.services" package, registers Swagger resources (ApiListingResource and SwaggerSerializers), sets up BeanConfig for API documentation with host, base path, and scanning enabled, creates and starts a Grizzly HTTP server at "http://localhost:8080/dsaApp/", and adds a StaticHttpHandler to serve static content from the "./public/" directory.
 - **TracksService**: REST service that exposes endpoints to manage tracks (GET, POST, etc.).
 - **TextService**: Simple REST service for text responses.
 - **TracksManager**: Interface and implementation for the business logic of track management.
