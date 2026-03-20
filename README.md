@@ -48,7 +48,8 @@ graph TD
   - **TracksService**: REST service that exposes endpoints to manage tracks (GET, POST, etc.).
   - **TextService**: Simple REST service for text responses.
 - **domain:**
-  - **TracksManager**: Interface and implementation for the business logic of track management.
+  - **TracksManager**: Interface for the business logic of track management.
+  - **TracksManagerImpl**: Implementation for the business logic of track management.
   - **Track**: Data model representing a music track.
 - **MyExceptionMapper**: Exception mapper to handle API errors.
 - **TrackNotFoundException**: Custom exception for tracks not found.
