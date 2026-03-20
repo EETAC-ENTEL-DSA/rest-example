@@ -17,19 +17,21 @@ graph TD
 ## Main Architecture
 
 ```mermaid
-graph TD
+graph LR
     subgraph Servicios
         B[TracksService]
         C[TextService]
     end
-    subgraph Gestión de Tracks
+    subgraph Business logic
         B
+        I[TracksManager]
         D[TracksManagerImpl]
         E[Track]
     end
     A[HTTP Client] --> B
     A --> C
-    B --> D
+    B --> I
+    I --> D
     D --> E
     F[Main] --> G[Grizzly Server]
     G --> B
