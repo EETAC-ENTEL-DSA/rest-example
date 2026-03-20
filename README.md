@@ -21,7 +21,6 @@ graph TD
     subgraph Servicios
         B[TracksService]
         C[TextService]
-        Dummy[ ]
     end
     subgraph Business logic
         B
