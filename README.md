@@ -18,10 +18,19 @@ graph TD
 
 ```mermaid
 graph TD
-    A[HTTP Client] --> B[TracksService]
-    A --> C[TextService]
-    B --> D[TracksManager]
-    D --> E[Track Model]
+    subgraph Servicios
+        B[TracksService]
+        C[TextService]
+    end
+    subgraph Gestión de Tracks
+        B
+        D[TracksManagerImpl]
+        E[Track]
+    end
+    A[HTTP Client] --> B
+    A --> C
+    B --> D
+    D --> E
     F[Main] --> G[Grizzly Server]
     G --> B
     G --> C
