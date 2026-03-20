@@ -1,41 +1,34 @@
-const API_URL = "http://localhost:8080/dsaTracks/tracks";
+const API_URL = "http://localhost:8080/dsaApp/tracks";
 
-async function loadTracks() {
+async function fetchTracks() {
     const container = document.getElementById('tracks');
 
     try {
         const response = await fetch(API_URL);
-        
+
         if (!response.ok) {
-            throw new Error(`Error en la petición: ${response.status}`);
+            throw new Error(`Error HTTP: ${response.status}`);
         }
 
-        const tracks = await response.json();
+        const data = await response.json();
+        container.innerHTML = "";
 
-        container.innerHTML = '';
+        data.forEach(track => {
+            const card = document.createElement('div');
+            card.classList.add('track-card');
 
-        tracks.forEach(track => {
-            const card = createTrackCard(track);
+            card.innerHTML = `
+                    <h3>${track.title || 'Unknown Track'}</h3>
+                    <p>${track.singer || 'Unknown Artist'}</p>
+                    <small>Ref: ${track.id}</small>
+                `;
             container.appendChild(card);
         });
 
     } catch (error) {
-        console.error("Error al obtener los tracks:", error);
-        container.innerHTML = `<p style="color: red;">Error al cargar los tracks. Asegúrate de que el servidor en ${API_URL} esté activo.</p>`;
+        console.error("Error al cargar tracks:", error);
+        container.innerHTML = `<p style="color: red; text-align: center;">No se pudo conectar con la API en ${API_URL}</p>`;
     }
 }
 
-function createTrackCard(track) {
-    const div = document.createElement('div');
-    div.classList.add('track-card');  
-
-    div.innerHTML = `
-        <h3>${track.title || 'Sin título'}</h3>
-        <p><strong>Artista:</strong> ${track.singer || 'Desconocido'}</p>
-        <small>ID: ${track.id}</small>
-    `;
-
-    return div;
-}
-
-document.addEventListener('DOMContentLoaded', loadTracks);
+fetchTracks();

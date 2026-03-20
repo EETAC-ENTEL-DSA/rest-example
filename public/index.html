@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>My first webpage</title>
-        <link rel="stylesheet" href="styles.css">
-        <script src="js/tracks.js"></script>
+<html lang="es"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>DSA Tracks - Mi primera web</title>
 
-    </head>    
-    <body>
-    <h1>Hello</h1>
-    <p>World</p>
+    <link rel="stylesheet" href="styles.css">
 
-    DSA MOLA!!!!!!!!
-    <img src="img/espinete.jpg">        
+    <script src="js/tracks.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>DSA Tracks</h1>
+</header>
 
-    <div id="tracks"></div>
+<main>
+    <section class="intro">
+        <p><strong>DSA MOLA!!!!!!!!</strong></p>
+
+        <figure>
+            <img src="img/espinete.jpg" alt="Foto de Espinete" width="300">
+            <figcaption>Espinete.</figcaption>
+        </figure>
+    </section>
+
+    <hr>
+
+    <section class="content">
+        <h2>Lista de Canciones</h2>
+        <div id="tracks">
+            <p>carregant canciones...</p> </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 - Projecte DSA</p>
+</footer>
 </body>
 </html>
